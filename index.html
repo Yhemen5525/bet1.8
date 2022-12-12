@@ -1,0 +1,116 @@
+<!-- @format -->
+
+<html>
+  <head>
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <script src="./axios.min.js"></script>
+  </head>
+    <style>
+      th,
+      td {
+        color: white;
+        padding: 5px;
+      }
+      input {
+        width: 80px;
+        margin: 2px;
+      }
+      #process-info {
+        color: yellow;
+        font-size: large;
+      }
+      body {
+        padding: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box1">
+      <div>
+        Unit :
+        <div id="unit">1</div>
+        <hr />
+      </div>
+      <div>
+        Target Profit :
+        <div id="target-profit"></div>
+        <hr />
+      </div>
+      <div>
+        <div>
+          Initial Units :
+          <div id="intial-units"></div>
+          <hr />
+        </div>
+        Units :
+        <div id="units"></div>
+        <hr />
+      </div>
+    </div>
+    <div id="games">
+      <table>
+        <thead>
+          <tr>
+            <th>Game#</th>
+            <th>Stake</th>
+            <th>Outcome</th>
+            <th>Units</th>
+            <th>Profit</th>
+          </tr>
+        </thead>
+        <tbody id="tbody">
+          <tr>
+            <td>1</td>
+            <td>Ghc 2</td>
+            <td>?</td>
+            <td>[1,1,1,1,1]</td>
+            <td>?</td>
+          </tr>
+        </tbody>
+      </table>
+      <div id="nextstake">Next Stake</div>
+    </div>
+    <hr />
+    <div id="controls">
+      <div class="control-1">
+        <div>
+          <label>stake Ghs</label>
+          <input id="stake" type="text" />
+        </div>
+        <div>
+          <label>outcome</label>
+          <input id="outcome" type="text" />
+        </div>
+
+        <button id="strategy2">calc next (2)</button>
+        <button id="strategy3">calc next (3)</button>
+        <button id="save-btn">save data</button>
+        <button id="remove-data">clear data</button>
+      </div>
+      <hr />
+      <div class="control-2">
+        <div>
+          <label>Set Inital Units</label>
+          <input id="intial-units-input" type="text" value="1,2,3,4" />
+          <button onclick="setInitialUnitsInput()">set Inital units</button>
+        </div>
+        <div>
+          <label>odd2 is set to : <span id="odd2-display"></span></label>
+          <input id="odd2" type="text"  />
+          <button onclick="setOdd2()">set odd2</button>
+          <button onclick="resetOdd()">reset odd2 back to default</button>
+          
+        </div>
+      </div>
+        <div id="process-info">process info</div>
+      <div>
+        <button onclick="syncToLocal()">syncToLocal</button>
+        <button onclick="saveOnline()">saveDataOnline</button>
+
+      </div>
+    </div>
+
+    <script src="./main.js"></script>
+  </body>
+</html>
